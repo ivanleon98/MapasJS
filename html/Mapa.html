@@ -1,30 +1,51 @@
+<!DOCTYPE html>
 <html>
-    <head>
-            <title>Visualización</title>
-            <meta charset="utf-8">
-            <link rel="stylesheet" href="diseño_mapa.css">
-            <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"
-            integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
-            crossorigin=""/>
-            <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
-            integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
-            crossorigin=""></script>
-    </head>
-    <body>
-        <div id="map"></div>    
-        <script>
+<head>
 
-        
-        var mymap = L.map('map').setView([2.8894434,-73.783892], 13);
+    <meta charset="utf-8">
+    <title>VISUALIZACIÓN PUNTOS BANCO PICHINCHA</title>
+    <script src="https://unpkg.com/leaflet@1.0.2/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.2/dist/leaflet.css"/>
 
-        L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={pk.eyJ1IjoiaGltdXJhOTgiLCJhIjoiY2pyd2plNjh1MGRnMjQ0b2Q5Y3VlZzhtbyJ9.Xmt3_lpx392eoDmZo9rqA}', {
-        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-        maxZoom: 18,
-        id: 'mapbox.streets',
-        accessToken: 'your.mapbox.access.token'}).addTo(mymap);
-        </script>
-        
+<style>
 
-    </body>
+    #map{
+    width: 100%;
+    height: 580px;
+    box-shadow: 5px 5px 5px #888; }
+
+</style>    
+</head>
+
+<body>
+
+    <div id="map"></div>
+    <!-- l.map es la clase principal de la API, se usa para crear y manipular el mapa. -->
+    <script>
+        var map = L.map('map').
+     setView([4.626013,-74.097581],
+     13);
+//    <!-- añadir capas de openstreetmap- -->
+    L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>',
+    maxZoom: 18
+    }).addTo(map);
+    // permite moverse en el mapa.
+    L.control.scale().addTo(map);
+    //  Agregar marcadores al mapa
+    var logo = '.\assets\logo-mini.png';
+     
+    var americas= L.marker([4.625482353047019,-74.09734045434911],{draggable: false}).addTo(map);
+        americas.bindPopup("<b>SEDE LAS AMÉRICAS</b><hr><h4>DIRECCIÓN</h4><p>Av. Américas N° 42 - 81</p><hr><h4>HORARIO ATENCIÓN</h4><p>8:00 am a 4:00 pm</p><hr><h4>HORARIO CAJERO</h4><p>L-D 24 horas</p>");
+    var carvajal= L.marker([4.612811529578977,-74.13405633089127],{draggable: false}).addTo(map);
+        carvajal.bindPopup("<b>SEDE CARVAJAL</b><hr><h3>DIRECCIÓN</h3><p>Av. Calle 26 Sur N° 69-12</p><hr><h3>HORARIO ATENCIÓN</h3><p>8:30 am a 4:30 pm</p><hr><h3>HORARIO CAJERO</h3><p>L-D 7:00 am a 5:30 pm</p>")
+    </script>   
+
+</body>
 </html>
 
+
+Av. Calle 26 sur N° 69 - 12
+Horario habitual: 8:30 am a 3:30 pm / Viernes y fin de mes de 8:30 am a 4:30 pm
+Horario cajero: L - D de 7:00 am a 5:30 pm
+Teléfono: (1) 6501000 / 01 8000 91 99 18
