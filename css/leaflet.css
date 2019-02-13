@@ -2,9 +2,17 @@
 
 
 #map{
-	width: 100%;
-	height: 580px;
-	box-shadow: 5px 5px 5px #888; }
+		width: 100%;
+		height: 580px;
+		box-shadow: 5px 5px 5px #888;
+	}
+
+	.model-info b{
+	
+		font-weight: Bold;
+		text-transform: uppercase;
+		color: #0f265C
+		}
 
 .leaflet-pane,
 .leaflet-tile,
@@ -383,7 +391,7 @@
 
 /* Default icon URLs */
 .leaflet-default-icon-path {
-	background-image: url(/mapasjs/assets/icono-cajero.svg);
+	background-image: url(./../leaflet/images/marker-icon.png);
 	}
 
 
