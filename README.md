@@ -1,24 +1,24 @@
 # MapasJS
-Proyecto para la implementaciÛn de componente de mapas, que permita visualizar puntos (sucursale, cajero).
+Proyecto para la implementaci√≥n de componente de mapas, que permita visualizar puntos (sucursale, cajero).
 <!DOCTYPE html>
 <html>
 <head>
-    <meta name="author" content="DirecciÛn de InnovaciÛn y TecnologÌa de Banco Pichincha Colombia"> 
+    <meta name="author" content="Direcci√≥n de Innovaci√≥n y Tecnolog√≠a de Banco Pichincha Colombia"> 
 	<meta charset= "UTF-8">
-        <TItle>Mapa Sedes</TItle>
+    <title>Mapa Sedes</title>
 </head>
     <h3>GENERAL</h3>
-<p>Componente que permite la visualizaciÛn de las sedes a nivel nacional. Utiliza API leaflet version 1.4.0, HTML5, javascript, CSS3 y el componente OpenStreetMap. 
-	Descripci√≥n: Soporte de navegadores Chrome, Firefox, Safari 5, Opera 12, IE 7‚Äì11 Edge
+<p>Componente que permite la visualizaci√≥n de las sedes a nivel nacional. Utiliza API leaflet version 1.4.0, HTML5, javascript, CSS3 y el componente OpenStreetMap. 
+	Descripci√≥n: Soporte de navegadores Chrome, Firefox, Safari 5, Opera 12, IE 7 - 11 Edge
 	</p>
-    <h3>CONFIGURACI”N</h3>
-    <p>Agregar una nueva ubicaciÛn al mapa:  
+    <h3>CONFIGURACI√ìN</h3>
+    <p>Agregar una nueva ubicaci√≥n al mapa:  
         <ul>
-            <li><p>Para agregar una nueva ubicaciÛn al objeto tipo "UbicaciÛn" se deben agregar los parametros solicitados como se muestra en el siguiente ejemplo:<br><br>   
+            <li><p>Para agregar una nueva ubicaci√≥n al objeto tipo "Ubicaci√≥n" se deben agregar los parametros solicitados como se muestra en el siguiente ejemplo:<br><br>   
                 var ubicaciones = [ <br><br>
-                new Localizacion("urlimage","Centro","Cra 44 36-40","Barranquilla","Atl·ntico","3302700","8:00am - 4:00pm, Viernes 04:30:00 p.m.",undefined,SEDES.suc,undefined,"10.983335","-74.779656"),<br><br>
+                new Localizacion("urlimage","Centro","Cra 44 36-40","Barranquilla","Atl√°ntico","3302700","8:00am - 4:00pm, Viernes 04:30:00 p.m.",undefined,SEDES.suc,undefined,"10.983335","-74.779656"),<br><br>
                    
-				   <li><b>Par·metros solicitados:</b> urlimage,sucursal, direccion, ciudad, deparatamento, telefono, horario_habitual, horario_cajero, SEDES, horario_adicional,latitud,longitud<br><br></li>
+				   <li><b>Par√°metros solicitados:</b> urlimage,sucursal, direccion, ciudad, deparatamento, telefono, horario_habitual, horario_cajero, SEDES, horario_adicional,latitud,longitud<br><br></li>
                         
 						<b>NOTA:</b> <p>Cuando no se encuentra la imagen de la sede, se ignora el parametro "urlimage"</p>
 						
