@@ -3,7 +3,7 @@ Proyecto para la implementación de componente de mapas, que permita visualizar 
 <!DOCTYPE html>
 <html>
 <head>
-    <meta name="author" content="Dirección de Innovación y Tecnología de Banco Pichincha Colombia"> 
+    <meta name="author" content="Dirección de Innovación y Tecnología - Banco Pichincha Colombia"> 
 	<meta charset= "UTF-8">
     <title>Mapa Sedes</title>
 </head>
@@ -16,9 +16,9 @@ Proyecto para la implementación de componente de mapas, que permita visualizar 
         <ul>
             <li><p>Para agregar una nueva ubicación al objeto tipo "Ubicación" se deben agregar los parametros solicitados como se muestra en el siguiente ejemplo:<br><br>   
                 var ubicaciones = [ <br><br>
-                new Localizacion("urlimage","Centro","Cra 44 36-40","Barranquilla","Atlántico","3302700","8:00am - 4:00pm, Viernes 04:30:00 p.m.",undefined,SEDES.suc,undefined,"10.983335","-74.779656"),<br><br>
+                new Localizacion("urlimage", "Centro", "Cra 44 36-40", "Barranquilla", "Atlántico", "3302700", "8:00am - 4:00pm, Viernes 04:30:00 p.m.", undefined, SEDES.suc, undefined, "10.983335", "-74.779656", "imagen-sede.ong"),<br><br>
                    
-				   <li><b>Parámetros solicitados:</b> urlimage,sucursal, direccion, ciudad, deparatamento, telefono, horario_habitual, horario_cajero, SEDES, horario_adicional,latitud,longitud<br><br></li>
+				   <li><b>Parámetros solicitados:</b> urlimage, sucursal, direccion, ciudad, departamento, telefono, horario_habitual, horario_cajero, SEDES, horario_adicional, latitud, longitud, nombreCompletoImagen<br><br></li>
                         
 						<b>NOTA:</b> <p>Cuando no se encuentra la imagen de la sede, se ignora el parametro "urlimage"</p>
 						
