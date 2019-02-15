@@ -485,8 +485,6 @@
 	margin-left: -20px;
 	overflow: hidden;
 	pointer-events: none;
-	
-	
 	}
 .leaflet-popup-tip {
 	width: 17px;
@@ -508,7 +506,6 @@
 	box-shadow: 0 3px 14px rgba(0,0,0,0.4);
 
 	}
-
 .leaflet-container a.leaflet-popup-close-button:hover {
 	color: #999;
 	}
@@ -625,9 +622,3 @@
 	margin-left: -12px;
 	border-right-color: #fff;
 	}
-/*
-	.leaflet-popup-content {
-		transform: scale(4);
- } 
- */
-
