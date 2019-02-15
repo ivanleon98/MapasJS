@@ -117,38 +117,46 @@ function pintarSede(SEDE) {
    //  Agregar marcadores al mapa
    for (i = 0; i < ubicaciones.length; i++) {
       let marca = L.marker([ubicaciones[i].latitud, ubicaciones[i].longitud], { draggable: false }).addTo(map);
-      marca.bindPopup("<div class='model-info' id='ubicaciones' onmouseover='zoomin();' onmouseout='zoomout();' onclick='zoomin();'>"
-					   + "<b>Sede " + ubicaciones[i].sucursal + "</b>"
-					   + "<br />"
-                       + "<b style='font-size: 9px;'>" + ubicaciones[i].departamento + " - " + ubicaciones[i].ciudad + "</b>"
-					   + "<br />"
-					   + "<b style='font-size: 9px;'>" + ubicaciones[i].sede + "</b>"
-					   + "<hr>"
-                       + "<b>general</b>"
-					   + "<br />"
-					   + "<img src='./../assets/casa.svg' style='padding-right:8px; width:18px; height:18px'>"+ubicaciones[i].direccion+"<br />"
-					   + (ubicaciones[i].urlimage ? 
-							"<img src='./../assets/sedes/" + ubicaciones[i].urlimage + "' style='width:100%;'><br />" : 
-							"")
-					   + "<hr>"
-                       + "<b>horarios</b>"
-					   + "<br />"
-					   + "<img src='./../assets/calendario.svg' style='padding-right:8px; width:18px; height:18px'>"+ubicaciones[i].horario_habitual
-					   + "<br />"
-                       + "<img src='./../assets/cajero.svg' style='padding-right:8px; width:18px; height:18px'>"+ubicaciones[i].horario_cajero
-					   + "<br />"
-					   + "<hr>"
-                       + "<b>teléfonos: </b>"
-					   + "<br>"
-					   + "<img src='./../assets/celular.svg' style='padding-right:8px; width:18px; height:18px'>"+ubicaciones[i].telefono+"<br />"
-                       + "</div>");
-   }   
+      marca.bindPopup("<div class='model-info' id='ubicaciones' onmouseover='zoomin(this);' onclick='zoomin(this);' onmouseout='zoomout(this);'>"
+         + "<b>Sede " + ubicaciones[i].sucursal + "</b>"
+         + "<br />"
+         + "<b style='font-size: 9px;'>" + ubicaciones[i].departamento + " - " + ubicaciones[i].ciudad + "</b>"
+         + "<br />"
+         + "<b style='font-size: 9px;'>" + ubicaciones[i].sede + "</b>"
+         + "<hr>"
+         + "<b>general</b>"
+         + "<br />"
+         + "<img src='./../assets/casa.svg' style='padding-right:8px; width:18px; height:18px'>" + ubicaciones[i].direccion + "<br />"
+         + (ubicaciones[i].urlimage ?
+            "<img id='sede-image' src='./../assets/sedes/" + ubicaciones[i].urlimage + "' style='width:100%;'><br />" :
+            "")
+         + "<hr>"
+         + "<b>horarios</b>"
+         + "<br />"
+         + "<img src='./../assets/calendario.svg' style='padding-right:8px; width:18px; height:18px'>" + ubicaciones[i].horario_habitual
+         + "<br />"
+         + (ubicaciones[i].horario_cajero ?
+          "<img src='./../assets/cajero.svg' style='padding-right:8px; width:18px; height:18px'>" + ubicaciones[i].horario_cajero :
+            "")
+         + "<br />"
+         + "<hr>"
+         + "<b>teléfonos: </b>"
+         + "<br>"
+         + "<img src='./../assets/celular.svg' style='padding-right:8px; width:18px; height:18px'>" + ubicaciones[i].telefono + "<br />"
+         + "</div>"
+         + "<div class='container-flecha'>"
+         + "<div class='flecha'></div>"
+         + "</div>");
+   }
 }
 
-function zoomin() {
-   document.getElementById("ubicaciones").parentElement.parentElement.style='transform:scale(1.3) translateY(-30px)';
+function zoomin(obj) {
+   let transYZ1 = function () { return obj.querySelector('#sede-image') == null ? "-69px" : "-200px"; }; // -69px si no contiene imagen
+   let transYZ2 = function () { return obj.querySelector('#sede-image') == null ? "-30px" : "-45px"; }; // -30px si no contiene imagen
+   obj.parentElement.parentElement.style =
+      (screen.width == undefined || screen.width < 420 ? 'transform:scale(2.0) translateY(' + transYZ1() + ')' : 'transform:scale(1.3) translateY(' + transYZ2() + ')');
 }
 
-function zoomout(){
-   document.getElementById("ubicaciones").parentElement.parentElement.style.transform='scale(1.0)';
+function zoomout(obj) {
+   obj.parentElement.parentElement.style.transform = 'scale(1.0)'
 }
