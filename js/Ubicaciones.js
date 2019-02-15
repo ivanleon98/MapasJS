@@ -148,7 +148,9 @@ function pintarSede(SEDE) {
          + "<div class='flecha'></div>"
          + "</div>");
    }
-}function zoomin(obj) {
+}
+
+function zoomin(obj) {
    let transYZ1 = function () { return obj.querySelector('#sede-image') == null ? "-69px" : "-200px"; }; // -69px si no contiene imagen
    let transYZ2 = function () { return obj.querySelector('#sede-image') == null ? "-30px" : "-45px"; }; // -30px si no contiene imagen
    obj.parentElement.parentElement.style =
@@ -156,5 +158,5 @@ function pintarSede(SEDE) {
 }
 
 function zoomout(obj) {
-   obj.parentElement.parentElement.style.transform = 'scale(1.03)'
+   obj.parentElement.parentElement.style.transform = 'scale(1.0)'
 }
