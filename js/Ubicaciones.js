@@ -117,7 +117,7 @@ function pintarSede(SEDE) {
    //  Agregar marcadores al mapa
    for (i = 0; i < ubicaciones.length; i++) {
       let marca = L.marker([ubicaciones[i].latitud, ubicaciones[i].longitud], { draggable: false }).addTo(map);
-      marca.bindPopup("<div class='model-info' id='ubicaciones'onmouseover='zoomin();' onmouseout='zoomout();' onclick='zoomin();'>"
+      marca.bindPopup("<div class='model-info' id='ubicaciones' onmouseover='zoomin();' onmouseout='zoomout();' onclick='zoomin();'>"
 					   + "<b>Sede " + ubicaciones[i].sucursal + "</b>"
 					   + "<br />"
                        + "<b style='font-size: 9px;'>" + ubicaciones[i].departamento + " - " + ubicaciones[i].ciudad + "</b>"
@@ -146,13 +146,9 @@ function pintarSede(SEDE) {
 }
 
 function zoomin() {
-   
    document.getElementById("ubicaciones").parentElement.parentElement.style='transform:scale(1.3) translateY(-30px)';
-   
-   
 }
+
 function zoomout(){
-   
-   document.getElementById("ubicaciones").parentElement.parentElement.style.transform='scale(1.0)'
-   
+   document.getElementById("ubicaciones").parentElement.parentElement.style.transform='scale(1.0)';
 }
