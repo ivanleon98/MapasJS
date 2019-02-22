@@ -26,7 +26,6 @@ Proyecto para la implementación de componente de mapas, que permita visualizar 
 						latitud = "10.983335", longitud = "-74.779656", nombreCompletoImagen = "imagen-sede.png"
 						<br><br>
 						<b>Sedes : </b>Es una constante que presenta 4 valores, que dependen del tipo de sede a registrar:
-                        <br>
 						  suc: 'Sucursal',
                           ave: 'Unidad Especializada de Vehículos',
                           aed: 'Unidad Educativa',  
