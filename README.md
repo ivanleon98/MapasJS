@@ -5,7 +5,6 @@ Proyecto para la implementación de componente de mapas, que permita visualizar 
 <head>
     <meta name="author" content="Dirección de Innovación y Tecnología - Banco Pichincha Colombia"> 
 	<meta charset= "UTF-8">
-    <title>Mapa Sedes</title>
 </head>
     <h3>GENERAL</h3>
 	<p>
