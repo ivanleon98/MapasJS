@@ -12,7 +12,7 @@ Proyecto para la implementación de componente de mapas, que permita visualizar 
 		<br>Navegadores Soportados: Chrome, Firefox, Safari 5, Opera 12, IE 7 - 11 Edge
 	</p>
     <h3>CONFIGURACIÓN</h3>
-    <p>Agregar una nueva ubicación al mapa:  
+    <p>Como agregar una nueva ubicación en el mapa:  
         <ul>
             <li>
 				<p>
