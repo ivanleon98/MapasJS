@@ -32,7 +32,7 @@ Proyecto para la implementación de componente de mapas, que permita visualizar 
                         &nbps;aed: 'Unidad  Educativa',  
                         &nbps;cajero:'Cajero'
                         <br><br>
-                        <b>Aclaración : </b><p>Los campos definidos con undefined, son asumidos que el dato no esta presente.</p>
+                        <b>Aclaración : </b>Los campos definidos con undefined, son asumidos que el dato no esta presente.
 				</p>
             </li>
         </ul>
