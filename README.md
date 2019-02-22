@@ -25,7 +25,7 @@ Proyecto para la implementación de componente de mapas, que permita visualizar 
 						telefono = '3302700', horario_habitual = "8:00am - 4:00pm, Viernes...", horario_cajero = "undefined", SEDES (ver), horario_adicional = "undefined", 
 						latitud = "10.983335", longitud = "-74.779656", nombreCompletoImagen = "imagen-sede.png"
 						<br><br>
-						<b>SEDES : </b>Es una constante que presenta 4 valores, que dependen del tipo de sede a registrar:
+						<b>Sedes : </b>Es una constante que presenta 4 valores, que dependen del tipo de sede a registrar:
                         <br>
 						  suc: 'Sucursal',
                           ave: 'Unidad Especializada de Vehículos',
