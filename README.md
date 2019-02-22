@@ -28,8 +28,8 @@ Proyecto para la implementación de componente de mapas, que permita visualizar 
 						<b>SEDES : </b>Es una constante que presenta 4 valores, que dependen del tipo de sede a registrar:
                         <br>
 						  suc: 'Sucursal',
-                          ave: 'Unidad Especializada de sucursal',
-                          aed: 'Unidad  Educativa',  
+                          ave: 'Unidad Especializada de Vehículos',
+                          aed: 'Unidad Educativa',  
                           cajero:'Cajero'
                         <br><br>
                         <b>Aclaración : </b>Los campos definidos con undefined, son asumidos que el dato no esta presente.
