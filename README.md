@@ -9,7 +9,7 @@ Proyecto para la implementación de componente de mapas, que permita visualizar 
     <h3>GENERAL</h3>
 	<p>
 		Componente que permite la visualización de las sedes a nivel nacional. Utiliza API leaflet version 1.4.0, HTML5, javascript, CSS3 y el componente OpenStreetMap. 
-		Descripción: Soporte de navegadores Chrome, Firefox, Safari 5, Opera 12, IE 7 - 11 Edge
+		<br>Navegadores Soportados: Chrome, Firefox, Safari 5, Opera 12, IE 7 - 11 Edge
 	</p>
     <h3>CONFIGURACIÓN</h3>
     <p>Agregar una nueva ubicación al mapa:  
