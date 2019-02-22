@@ -25,14 +25,14 @@ Proyecto para la implementación de componente de mapas, que permita visualizar 
 						telefono = '3302700', horario_habitual = "8:00am - 4:00pm, Viernes...", horario_cajero = "undefined", SEDES (ver), horario_adicional = "undefined", 
 						latitud = "10.983335", longitud = "-74.779656", nombreCompletoImagen = "imagen-sede.png"
 						<br><br>
-						<b>NOTA:</b><p>Cuando no se encuentra la imagen de la sede, se ignora el parametro "urlimage"</p>
-						<b>SEDES</b>es una constante que consta de 4 parametros dependiendo del tipo de sede:
-						<br>
+						<b>SEDES : </b>Es una constante que presenta 4 valores, que dependen del tipo de sede a registrar:
                         <br>
-						suc: 'Sucursal',
-                        ave: 'Unidad Especializada de sucursal',
-                        aed: 'Unidad  Educativa',  
-                        cajero:'Cajero'   
+						&nbps;suc: 'Sucursal',
+                        &nbps;ave: 'Unidad Especializada de sucursal',
+                        &nbps;aed: 'Unidad  Educativa',  
+                        &nbps;cajero:'Cajero'
+                        <br><br>
+                        <b>Aclaración : </b><p>Los campos definidos con undefined, son asumidos que el dato no esta presente.</p>
 				</p>
             </li>
         </ul>
