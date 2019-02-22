@@ -16,7 +16,7 @@ Proyecto para la implementación de componente de mapas, que permita visualizar 
         <ul>
             <li>
 				<p>
-					Para agregar una nueva ubicación, se debe crear un nuevo objeto tipo "Ubicación", de acuerdo a los parametros solicitados como se muestra en el siguiente ejemplo:<br><br>   
+					Para agregar una nueva ubicación, se debe crear un nuevo objeto tipo "Localización", de acuerdo a los parametros solicitados como se muestra en el siguiente ejemplo:<br><br>   
 					var ubicaciones = [ <br>
 					new Localizacion("urlimage", "Centro", "Cra 44 36-40", "Barranquilla", "Atlántico", "3302700", "8:00am - 4:00pm, Viernes 04:30:00 p.m.", 
 					undefined, SEDES.suc, undefined, "10.983335", "-74.779656", "imagen-sede.png"),
