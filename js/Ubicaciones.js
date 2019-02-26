@@ -143,6 +143,7 @@ function pintarSede(SEDE) {
          + "<b>teléfonos: </b>"
          + "<br>"
          + "<img src='./../assets/celular.svg' style='padding-right:8px; width:18px; height:18px'>" + ubicaciones[i].telefono + "<br />"
+		 + "<div id='pulsar' style='text-align:center'><img src='./../assets/huella.svg' style='padding-right:8px; width:44px;'></div>"
          + "</div>"
          + "<div class='container-flecha'>"
          + "<div class='flecha'></div>"
@@ -153,10 +154,12 @@ function pintarSede(SEDE) {
 function zoomin(obj) {
    let transYZ1 = function () { return obj.querySelector('#sede-image') == null ? "-69px" : "-200px"; }; // -69px si no contiene imagen
    let transYZ2 = function () { return obj.querySelector('#sede-image') == null ? "-30px" : "-45px"; }; // -30px si no contiene imagen
+   document.getElementById("pulsar").style.display="none";
    obj.parentElement.parentElement.style =
       (screen.width == undefined || screen.width < 420 ? 'transform:scale(2.0) translateY(' + transYZ1() + ')' : 'transform:scale(1.3) translateY(' + transYZ2() + ')');
 }
 
 function zoomout(obj) {
+   document.getElementById("pulsar").style.display="block";
    obj.parentElement.parentElement.style.transform = 'scale(1.0)'
 }
