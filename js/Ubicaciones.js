@@ -23,10 +23,10 @@ function Localizacion(sucursal, direccion, ciudad, departamento, telefono, horar
 }
 
 var ubicaciones = [
-   // Prueba
-   // new Localizacion("Centro","Cra 44 36-40","Barranquilla","Atlántico","3302700","8:00am - 4:00pm, Viernes 04:30:00 p.m.",undefined,SEDES.suc,undefined,"10.983335","-73.779656", "parquebolivar.jpg"),
+   
+
    // Barranquilla
-   new Localizacion("Centro","Cra 44 36-40","Barranquilla","Atlántico","3302700","8:00am - 4:00pm, Viernes 04:30:00 p.m.",undefined,SEDES.suc,undefined,"10.983335","-74.779656","parquebolivar.png"),
+   new Localizacion("Centro","Cra 44 36-40","Barranquilla","Atlántico","3302700","8:00am - 4:00pm, Viernes 04:30:00 p.m.",undefined,SEDES.suc,undefined,"10.983335","-74.779656"),
    new Localizacion("Calle 72","Cll 72 41C - 46 locales 5,6,7","Barranquilla","Atlantico",3302700,"8:00am - 4:00pm, Viernes 04:30:00 p.m.(fin de mes), Lunes a Viernes 5:00-7:00 Sabados 9:00-1:00","L - D de 6:00 am a 10:00 pm",SEDES.suc,undefined,"10.991106","-74.807236","banco-pichincha-barranquilla-calle-72.png"),
    new Localizacion("Prado","Cra 59 75-13","Barranquilla","Atlántico",3302700,"8:00 am a 4:00 pm / Viernes y fin de mes de 8:00 am a 4:30 pm",undefined,SEDES.suc,undefined,"11.004796","-74.799924"),
    new Localizacion("Barranquilla-UV","Cra 59 75-13","Barranquilla","Atlántico",3302700,"8:00am - 4:00pm",undefined,SEDES.ave,undefined,"11.004796","-74.799924"),
