@@ -1,4 +1,5 @@
-var flagzoom = false;
+"use stritc";
+var flagzoom = undefined;
 
 var coordenadaGeneral = [4.626013, -74.097581];
 
@@ -168,33 +169,55 @@ function zoomout(obj) {
 }
 
 function alejarImagen() {
-   console.log('1' + flagzoom);
+   if (flagzoom == undefined) {
+      config();
+      flagzoom = false;
+   }
    //let img = 0;
    try {
       let o = document.getElementsByClassName("leaflet-control-scale-line")[0];
       let km = Number(o.innerHTML.substr(0, o.innerHTML.indexOf(' ')));
+      let tag = document.getElementsByTagName('img');
+      console.log('0-' + km + ',' + flagzoom);
       if (km >= 200 && !flagzoom) {
-         flagzoom == true;
-         config();
+         flagzoom = true;
          // alert('1');
-         let tag = document.getElementsByTagName('img');
+
          for (i = 0; i < tag.length; i++) {
             if (tag[i].src.indexOf('marker-icon.png') > 0) {
-               console.log('tag[i].style = ' + tag[i].style.cssText);
-               tag[i].style = tag[i].style.cssText + '; height:20px; width:20px;';
+               tag[i].style=tag[i].style.cssText.replace('height: 40px;','height: 20px;').replace('width: 40px;', 'width: 20px;');
+
+               // console.log('tag[i].style = ' + tag[i].style.cssText);
+               // tag[i].style = tag[i].style.cssText +  '; height:20px; width:20px;';
                try {
-                  document.getElementsByClassName('model-info').style = 'transform:translateY(50px)';
+                  // document.getElementsByClassName('model-info').style = 'transform:translateY(50px)';
                } catch (err) {
                   //console.log('->' + err);
                }
                //console.log('1');
-            } else if (km < 200 && flagzoom) {
-               let p = tag[i].style.cssText.IndexOf('height');
-               let s = tag[i].style.cssText.substr(0, p - 2 );
+            }
 
-               tag[i].style = s;  
-            }  
          }
+      } else if (km < 200 && flagzoom) {
+         flagzoom = false;
+         for (i = 0; i < tag.length; i++) {
+            if (tag[i].src.indexOf('marker-icon.png') > 0) {
+               tag[i].style = tag[i].style.cssText.replace('height: 20px;','height: 40px;').replace('width: 20px;', 'width: 40px;');
+
+               // let pos = tag[i].style.cssText.indexOf('height');
+               // let sty = tag[i].style.cssText.substr(0, pos - 2);
+               // console.log('tag[i].style = ' + tag[i].style.cssText + '-' + sty);
+               // tag[i].style = sty;
+               try {
+                  // document.getElementsByClassName('model-info').style = 'transform:translateY(50px)';
+               } catch (err) {
+                  //console.log('->' + err);
+               }
+               //console.log('1');
+            }
+
+         }
+
       }
    } catch (e) {
       console.log(e);
