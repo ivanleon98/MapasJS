@@ -189,14 +189,14 @@ function alejarImagen() {
       if (km >= 200 && !flagzoom) {
          flagzoom = true;
          for (let i = 0; i < tag.length; i++) {
-            if (tag[i].src.indexOf('marker-icon.png') > 0) {
+            if (tag[i].src.indexOf('marker-icon') > 0) {
                tag[i].style = tag[i].style.cssText.replace('height: 40px;', 'height: 20px;').replace('width: 40px;', 'width: 20px;');
             }
          }
       } else if (km < 200 && flagzoom) {
          flagzoom = false;
          for (let i = 0; i < tag.length; i++) {
-            if (tag[i].src.indexOf('marker-icon.png') > 0) {
+            if (tag[i].src.indexOf('marker-icon') > 0) {
                tag[i].style = tag[i].style.cssText.replace('height: 20px;', 'height: 40px;').replace('width: 20px;', 'width: 40px;');
             }
          }
