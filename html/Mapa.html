@@ -7,11 +7,31 @@
 	<script src="./../js/leaflet.js"></script>
 	<script src="./../js/Ubicaciones.js"></script>
 	<link rel="stylesheet" href="./../css/leaflet.css" />
+	<link rel="stylesheet" href="./../css/pichincha.css">
 	<link rel="icon" href="./../assets/logo-mini.png" type="image/png" sizes="32x32">
 </head>
 
 <body onload="pintarSede(); eventMouse()" id="bd">
-	<div id="map"> </div>
+
+	<div id="map">
+		<div class="btns">
+			<div id="filtro">
+				<input type="image" src="./../assets/filter.svg" alt="filter" style="transform:scale(0.7);" title="Filtrar">
+			</div>
+			<div id="sucursal">
+				<input type="image" src="./../assets/banca.svg" style="opacity:1" alt="Buscar sucursal" onclick="filter(this);filterForType();" title="Sucursal" >
+			</div>
+			<div id="cajero">
+			<input type="image" src="./../assets/cajero.svg" style="opacity:1" alt="Buscar cajero" onclick="filter(this);" title="Cajeros">
+			</div>
+			<div id="educativo">
+				<input type="image" src="./../assets/sombrero-de-la-graduacion.svg" style="opacity:1" alt="Buscar unidades Educativas" onclick="filter(this);" title="Unidad Educativa">
+			</div>
+			<div id="vehículos">
+				<input type="image" src="./../assets/coche.svg" style="opacity:1" alt="Buscar unidades Vehículos" onclick="filter(this);" title="Unidad Especializada de Veh&iacute;culos">
+			</div>
+		</div>
+	</div>
 </body>
 
 </html>

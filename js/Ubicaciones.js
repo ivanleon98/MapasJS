@@ -115,6 +115,7 @@ function pintarSede() {
       attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>',
       maxZoom: 18
    }).addTo(map);
+
    // permite moverse en el mapa.
    L.control.scale().addTo(map);
    // function para cargar sedes
@@ -130,12 +131,12 @@ function pintarSede() {
    //  Agregar marcadores al mapa
    for (let i = 0; i < ubicaciones.length; i++) {
       let marca = L.marker([ubicaciones[i].latitud, ubicaciones[i].longitud], { draggable: false }).addTo(map);
-      marca.bindPopup("<div class='model-info' id='ubicaciones' onmouseover='zoomin(this);' onclick='zoomin(this);' onmouseout='zoomout(this);'>"
+      marca.bindPopup("<div class='model-info' id='ubicaciones-"+(i*2+1)+"' onmouseover='zoomin(this);' onclick='zoomin(this);' onmouseout='zoomout(this);'>"
          + "<b>Sede " + ubicaciones[i].sucursal + "</b>"
          + "<br />"
          + "<b style='font-size: 9px;'>" + ubicaciones[i].departamento + " - " + ubicaciones[i].ciudad + "</b>"
          + "<br />"
-         + "<b style='font-size: 9px;'>" + fn(ubicaciones[i].sede) + "</b>"
+         + "<b id='sede"+(i*2+1)+"' style='font-size: 9px;'>" + fn(ubicaciones[i].sede) + "</b>"
          + "<hr>"
          + "<b>general</b>"
          + "<br />"
@@ -204,12 +205,33 @@ function alejarImagen() {
    } catch (e) {
    }
 }
+
 function eventMouse() {
    document.getElementById('bd').addEventListener("touchmove", function () { alejarImagen() }, true);
    document.getElementById('bd').addEventListener("click", function () { alejarImagen() }, true);
    document.getElementById('bd').addEventListener("mouseover", function () { alejarImagen() }, true);
    document.getElementById('bd').addEventListener("wheel", function () { alejarImagen() }, true);
 }
+
+function filter(obj) {
+   if (('' + obj.style.opacity) === '1') {
+      obj.style = "opacity: 0.6; border:1px solid #c0c0c0;";
+   } else {
+      obj.style = "opacity: 1; border:none;";
+   }
+}
+
+function filterForType() {
+
+   console.log('->' + u)
+   for (let i = 0; i < u.length; i++) {
+      console.log('2' + u.length)
+      if (u[i].IndexOf('[') > 0) {
+         console.log(u[i] + '3');
+      }
+   }
+}
+
 
 
 
