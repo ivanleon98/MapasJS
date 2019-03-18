@@ -131,14 +131,14 @@ function pintarSede() {
    //  Agregar marcadores al mapa
    for (let i = 0; i < ubicaciones.length; i++) {
       let marca = L.marker([ubicaciones[i].latitud, ubicaciones[i].longitud], { draggable: false }).addTo(map);
-      marca.bindPopup("<div class='model-info' id='ubicaciones-"+(i*2+1)+"' onmouseover='zoomin(this);' onclick='zoomin(this);' onmouseout='zoomout(this);'>"
+      marca.bindPopup("<div class='model-info' id='ubicaciones'-"+(i*2+1)+"' onmouseover='zoomin(this);' onclick='zoomin(this);' onmouseout='zoomout(this);'>"
          + "<b>Sede " + ubicaciones[i].sucursal + "</b>"
          + "<br />"
          + "<b style='font-size: 9px;'>" + ubicaciones[i].departamento + " - " + ubicaciones[i].ciudad + "</b>"
          + "<br />"
          + "<b id='sede"+(i*2+1)+"' style='font-size: 9px;'>" + fn(ubicaciones[i].sede) + "</b>"
          + "<hr>"
-         + "<b>general</b>"
+         + "<b id='general'>general</b>"
          + "<br />"
          + "<img src='./../assets/casa.svg' style='padding-right:8px; width:18px; height:18px'>" + ubicaciones[i].direccion + "<br />"
          + (ubicaciones[i].urlimage ?
@@ -222,15 +222,21 @@ function filter(obj) {
 }
 
 function filterForType() {
-
-   console.log('->' + u)
+   let u = document.getElementById('ubicaciones');
+   console.log(u);
    for (let i = 0; i < u.length; i++) {
-      console.log('2' + u.length)
-      if (u[i].IndexOf('[') > 0) {
-         console.log(u[i] + '3');
-      }
+      console.log(u.length);
+      let n = u[i].getAttribute('id').substr(u[i].id.indexOf('-') +1);
+      let c = document.getElementById('cube'+n);
+      let s = document.getElementById('sede'+n);
+
+      let e1= s.innerHTML.indexOf(SEDES.suc)
+
    }
-}
+
+      }
+   
+
 
 
 
