@@ -1,5 +1,5 @@
 # MapasJS
-Proyecto para la implementación de componente de mapas, que permita visualizar puntos (sucursale, cajero).
+Proyecto para la implementación de componente de mapas, que permita visualizar puntos (sucursale, cajeros,unidades educativas y unidades de vehículos).
 <!DOCTYPE html>
 <html>
 <head>

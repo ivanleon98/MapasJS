@@ -1,7 +1,6 @@
 "use strict";
 var flagzoom = undefined;
 var coordenadaGeneral = [4.626013, -74.097581];
-
 const SEDES = {
    suc: 'Sucursal',
    ave: 'Unidad Especializada de Vehículos',
@@ -115,6 +114,7 @@ function pintarSede() {
       attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>',
       maxZoom: 18
    }).addTo(map);
+
    // permite moverse en el mapa.
    L.control.scale().addTo(map);
    // function para cargar sedes
@@ -127,17 +127,20 @@ function pintarSede() {
       } catch (e) { }
       return r;
    };
+   let s = document.getElementById("hiddenSedes");
    //  Agregar marcadores al mapa
    for (let i = 0; i < ubicaciones.length; i++) {
       let marca = L.marker([ubicaciones[i].latitud, ubicaciones[i].longitud], { draggable: false }).addTo(map);
+      let idubi = (i * 2 + 1);
+      s.innerHTML = s.innerHTML + "<input name='idu' id='" + idubi + "' type='hidden' value='" + fn(ubicaciones[i].sede) + "' >";
       marca.bindPopup("<div class='model-info' id='ubicaciones' onmouseover='zoomin(this);' onclick='zoomin(this);' onmouseout='zoomout(this);'>"
          + "<b>Sede " + ubicaciones[i].sucursal + "</b>"
          + "<br />"
          + "<b style='font-size: 9px;'>" + ubicaciones[i].departamento + " - " + ubicaciones[i].ciudad + "</b>"
          + "<br />"
-         + "<b style='font-size: 9px;'>" + fn(ubicaciones[i].sede) + "</b>"
+         + "<b id='sede" + idubi + "' style='font-size: 9px;'>" + fn(ubicaciones[i].sede) + "</b>"
          + "<hr>"
-         + "<b>general</b>"
+         + "<b id='general'>general</b>"
          + "<br />"
          + "<img src='./../assets/casa.svg' style='padding-right:8px; width:18px; height:18px'>" + ubicaciones[i].direccion + "<br />"
          + (ubicaciones[i].urlimage ?
@@ -204,12 +207,50 @@ function alejarImagen() {
    } catch (e) {
    }
 }
+
 function eventMouse() {
    document.getElementById('bd').addEventListener("touchmove", function () { alejarImagen() }, true);
    document.getElementById('bd').addEventListener("click", function () { alejarImagen() }, true);
    document.getElementById('bd').addEventListener("mouseover", function () { alejarImagen() }, true);
    document.getElementById('bd').addEventListener("wheel", function () { alejarImagen() }, true);
 }
+
+function filter(obj) {
+   if (('' + obj.style.opacity) === '1') {
+      obj.style = "opacity: 0.6; border:1px solid #c0c0c0;";
+   } else {
+      obj.style = "opacity: 1; border:none;";
+   }
+}
+
+function filterForType(obj, sedes) {
+   let cont = 0;
+   let sedetype = sedes;
+   let idu = document.getElementsByName('idu');
+   let sty = obj.style.opacity;
+   if (sty == '0.6') {
+      for (let i = 0; i < idu.length; i++) {
+         if (idu[i].getAttribute('value').indexOf(sedetype) < 0) {
+            let id = idu[i].getAttribute('id');
+            let c = document.getElementById('cube' + id);
+            c.style.display = "none";
+         } else {
+            cont++;
+         }
+      }
+   } else if (sty == '1') {
+      for (let i = 0; i < idu.length; i++) {
+         if (idu[i].getAttribute('value').indexOf(sedetype) >= 0) {
+            let id = idu[i].getAttribute('id');
+            let c = document.getElementById('cube' + id);
+            c.style.display = "block";
+         }
+      }
+   }
+
+      }
+   
+
 
 
 
