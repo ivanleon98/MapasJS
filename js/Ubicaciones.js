@@ -1,7 +1,6 @@
 "use strict";
 var flagzoom = undefined;
 var coordenadaGeneral = [4.626013, -74.097581];
-
 const SEDES = {
    suc: 'Sucursal',
    ave: 'Unidad Especializada de Vehículos',
@@ -128,15 +127,18 @@ function pintarSede() {
       } catch (e) { }
       return r;
    };
+   let s = document.getElementById("hiddenSedes");
    //  Agregar marcadores al mapa
    for (let i = 0; i < ubicaciones.length; i++) {
       let marca = L.marker([ubicaciones[i].latitud, ubicaciones[i].longitud], { draggable: false }).addTo(map);
-      marca.bindPopup("<div class='model-info' id='ubicaciones'-"+(i*2+1)+"' onmouseover='zoomin(this);' onclick='zoomin(this);' onmouseout='zoomout(this);'>"
+      let idubi = (i * 2 + 1);
+      s.innerHTML = s.innerHTML + "<input name='idu' id='" + idubi + "' type='hidden' value='" + fn(ubicaciones[i].sede) + "' >";
+      marca.bindPopup("<div class='model-info' id='ubicaciones' onmouseover='zoomin(this);' onclick='zoomin(this);' onmouseout='zoomout(this);'>"
          + "<b>Sede " + ubicaciones[i].sucursal + "</b>"
          + "<br />"
          + "<b style='font-size: 9px;'>" + ubicaciones[i].departamento + " - " + ubicaciones[i].ciudad + "</b>"
          + "<br />"
-         + "<b id='sede"+(i*2+1)+"' style='font-size: 9px;'>" + fn(ubicaciones[i].sede) + "</b>"
+         + "<b id='sede" + idubi + "' style='font-size: 9px;'>" + fn(ubicaciones[i].sede) + "</b>"
          + "<hr>"
          + "<b id='general'>general</b>"
          + "<br />"
@@ -221,22 +223,33 @@ function filter(obj) {
    }
 }
 
-function filterForType() {
-   let u = document.getElementById('ubicaciones');
-   console.log(u);
-   for (let i = 0; i < u.length; i++) {
-      console.log(u.length);
-      let n = u[i].getAttribute('id').substr(u[i].id.indexOf('-') +1);
-      let c = document.getElementById('cube'+n);
-      let s = document.getElementById('sede'+n);
-
-      let e1= s.innerHTML.indexOf(SEDES.suc)
-
+function filterForType(obj, sedes) {
+   let cont = 0;
+   let sedetype = sedes;
+   let idu = document.getElementsByName('idu');
+   let sty = obj.style.opacity;
+   if (sty == '0.6') {
+      for (let i = 0; i < idu.length; i++) {
+         if (idu[i].getAttribute('value').indexOf(sedetype) < 0) {
+            let id = idu[i].getAttribute('id');
+            let c = document.getElementById('cube' + id);
+            c.style.display = "none";
+         } else {
+            cont++;
+         }
+      }
+   } else if (sty == '1') {
+      for (let i = 0; i < idu.length; i++) {
+         if (idu[i].getAttribute('value').indexOf(sedetype) >= 0) {
+            let id = idu[i].getAttribute('id');
+            let c = document.getElementById('cube' + id);
+            c.style.display = "block";
+         }
+      }
    }
 
       }
    
-
 
 
 
