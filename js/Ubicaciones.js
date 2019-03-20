@@ -216,10 +216,10 @@ function eventMouse() {
 }
 
  function filter(obj) {
-  if (('' + obj.style.opacity) === '1') {
-    obj.style = "opacity: 0.6; border:0.1px solid #c0c0c0; background-color:rgba(160, 160, 160, 0.7);";
+  if (('' + obj.style.opacity) === '0.6') {
+    obj.style = "opacity: 1; border:0.1px solid #c0c0c0; background-color:rgba(160, 160, 160, 0.7);";
   } else {
-     obj.style = "opacity: 1; border:none; background-color:none;";
+     obj.style = "opacity: 0.6; border:none; background-color:none;";
   }
  }
 
@@ -228,7 +228,7 @@ function filterForType(obj, sedes) {
    let sedetype = sedes;
    let idu = document.getElementsByName('idu');
    let sty = obj.style.opacity;
-   if (sty == '0.6') {
+   if (sty == '1') {
       for (let i = 0; i < idu.length; i++) {
          if (idu[i].getAttribute('value').indexOf(sedetype) < 0) {
             let id = idu[i].getAttribute('id');
@@ -238,7 +238,7 @@ function filterForType(obj, sedes) {
             cont++;
          }
       }
-   } else if (sty == '1') {
+   } else if (sty == '0.6') {
       for (let i = 0; i < idu.length; i++) {
          if (idu[i].getAttribute('value').indexOf(sedetype) >= 0) {
             let id = idu[i].getAttribute('id');
