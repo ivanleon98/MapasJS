@@ -215,13 +215,13 @@ function eventMouse() {
    document.getElementById('bd').addEventListener("wheel", function () { alejarImagen() }, true);
 }
 
-function filter(obj) {
+ function filter(obj) {
   if (('' + obj.style.opacity) === '1') {
-     obj.style = "opacity: 0.6; border:1px solid #c0c0c0; background-color:rgba(160, 160, 160, 0.3);";
+    obj.style = "opacity: 0.6; border:0.1px solid #c0c0c0; background-color:rgba(160, 160, 160, 0.3);";
   } else {
      obj.style = "opacity: 1; border:none; background-color:rgba(160, 160, 160, 0.7);";
   }
-}
+ }
 
 function filterForType(obj, sedes) {
    let cont = 0;
