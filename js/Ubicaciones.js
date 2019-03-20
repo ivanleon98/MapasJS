@@ -192,14 +192,14 @@ function alejarImagen() {
       if (km >= 200 && !flagzoom) {
          flagzoom = true;
          for (let i = 0; i < tag.length; i++) {
-            if (tag[i].src.indexOf('marker-icon.png') > 0) {
+            if (tag[i].src.indexOf('marker-icon') > 0) {
                tag[i].style = tag[i].style.cssText.replace('height: 40px;', 'height: 20px;').replace('width: 40px;', 'width: 20px;');
             }
          }
       } else if (km < 200 && flagzoom) {
          flagzoom = false;
          for (let i = 0; i < tag.length; i++) {
-            if (tag[i].src.indexOf('marker-icon.png') > 0) {
+            if (tag[i].src.indexOf('marker-icon') > 0) {
                tag[i].style = tag[i].style.cssText.replace('height: 20px;', 'height: 40px;').replace('width: 20px;', 'width: 40px;');
             }
          }
@@ -215,13 +215,13 @@ function eventMouse() {
    document.getElementById('bd').addEventListener("wheel", function () { alejarImagen() }, true);
 }
 
-function filter(obj) {
-   if (('' + obj.style.opacity) === '1') {
-      obj.style = "opacity: 0.6; border:1px solid #c0c0c0;";
-   } else {
-      obj.style = "opacity: 1; border:none;";
-   }
-}
+ function filter(obj) {
+  if (('' + obj.style.opacity) === '1') {
+    obj.style = "opacity: 0.6; border:0.1px solid #c0c0c0; background-color:rgba(160, 160, 160, 0.3);";
+  } else {
+     obj.style = "opacity: 1; border:none; background-color:rgba(160, 160, 160, 0.7);";
+  }
+ }
 
 function filterForType(obj, sedes) {
    let cont = 0;
