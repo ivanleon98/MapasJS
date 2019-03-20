@@ -217,9 +217,9 @@ function eventMouse() {
 
  function filter(obj) {
   if (('' + obj.style.opacity) === '1') {
-    obj.style = "opacity: 0.6; border:0.1px solid #c0c0c0; background-color:none;";
+    obj.style = "opacity: 0.6; border:0.1px solid #c0c0c0; background-color:rgba(160, 160, 160, 0.7);";
   } else {
-     obj.style = "opacity: 1; border:none; background-color:rgba(160, 160, 160, 0.7);";
+     obj.style = "opacity: 1; border:none; background-color:none;";
   }
  }
 
