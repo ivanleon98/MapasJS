@@ -18,18 +18,19 @@ Proyecto para la implementación de componente de mapas, que permita visualizar 
 				<p>
 					Para agregar una nueva ubicación, se debe crear un nuevo objeto tipo "Localización", de acuerdo a los parametros solicitados como se muestra en el siguiente ejemplo:<br><br>   
 					var ubicaciones = [ <br>
-					new Localizacion("urlimage", "Centro", "Cra 44 36-40", "Barranquilla", "Atlántico", "3302700", "8:00am - 4:00pm, Viernes 04:30:00 p.m.", 
+					new Localizacion( "Centro", "Cra 44 36-40", "Barranquilla", "Atlántico", "3302700", "8:00am - 4:00pm, Viernes 04:30:00 p.m.", 
 					undefined, SEDES.suc, undefined, "10.983335", "-74.779656", "imagen-sede.png"),
 					]<br><br>
-						<b>Parámetros solicitados:</b> urlimage, sucursal = "Centro", direccion = "Cra 44 36-44", ciudad = "Barranquilla", departamento = "Atlántico", 
-						telefono = '3302700', horario_habitual = "8:00am - 4:00pm, Viernes...", horario_cajero = "undefined", SEDES (ver), horario_adicional = "undefined", 
+						<b>Parámetros solicitados:</b>  sucursal = "Centro", direccion = "Cra 44 36-44", ciudad = "Barranquilla", departamento = "Atlántico", 
+						telefono = '3302700', horario_habitual = "8:00am - 4:00pm, Viernes...", horario_cajero = "undefined", ArraySedes, horario_adicional = "undefined", 
 						latitud = "10.983335", longitud = "-74.779656", nombreCompletoImagen = "imagen-sede.png"
 						<br><br>
-						<b>Sedes : </b>Es una constante que presenta 4 valores, que dependen del tipo de sede a registrar:
+						<b>SEDES : </b>Es una constante que presenta 4 valores, que dependen del tipo de sede a registrar:
 						  suc: 'Sucursal',
                           ave: 'Unidad Especializada de Vehículos',
                           aed: 'Unidad Educativa',
                           cajero:'Cajero'
+						  Ejemplo de como llenar el ArraySedes= [SEDES.suc,SEDES.ave,SEDES.aed,SEDES.cajero]
                         <br><br>
                         <b>Aclaración : </b>Los campos definidos con undefined, son asumidos que el dato no esta presente.
 				</p>
